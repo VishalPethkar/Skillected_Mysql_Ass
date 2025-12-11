@@ -1,0 +1,34 @@
+show databases;
+use newdb02;
+show tables;
+use newdb02;
+
+
+-- create table student (
+-- Id int,
+-- studednt varchar(20),
+-- marks int,
+-- mobno int
+-- );
+
+-- insert into students values (1,'luffy','67',123457890);
+
+-- select * from students;
+
+
+
+create table stud(
+Id int auto_increment primary key,     -- using a auto_increment for Id 
+name varchar(30),
+marks int,
+mobno int unique                          -- usinf for unique mobile num
+);
+
+select * from stud;
+insert into stud(name,marks,mobno)values ('luffy','67',123457890);
+insert into stud(name,marks,mobno)values 
+('zoro','62',123247890),
+('sanji','34',123987890),
+('choper','92',1232087890);
+
+select * from stud;
