@@ -32,3 +32,28 @@ insert into stud(name,marks,mobno)values
 ('choper','92',1232087890);
 
 select * from stud;
+
+
+select * from stud where id = 1;      -- select row in list
+
+
+select name from stud;               -- particular column select in list
+
+
+select name,marks from stud where Id = 3;    -- select name,marks in list
+
+
+select * from stud where marks >80;          -- finding a mark in about > 80 marks in list
+
+
+select * from stud where marks <80;          -- finding a marks in less than < 80 marks in list
+
+
+select * from stud where marks !=  60 and  name != 'luffy';                 -- remove the selecting values in list\
+
+
+-- operators in MySQl:-                <,>,<=,>=,=,!=,
+
+
+
+
