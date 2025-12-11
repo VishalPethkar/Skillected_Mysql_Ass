@@ -1,0 +1,76 @@
+create database Product_Db;
+
+
+use product_db;
+
+
+-- create table customer(
+-- Cust_ID int,varchar (20) auto_increment primary key,
+-- Cust_name varchar(30) primary key,------------------------------------------------WORNG ANSWER IN THIS 
+-- Mob_no int unique primary key,
+-- EmailId  varchar (30) unique primary key,
+-- City varchar(20)
+-- );
+
+CREATE TABLE customer (
+    Cust_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Cust_name VARCHAR(30) NOT NULL,
+    Mob_no VARCHAR(15) UNIQUE,
+    EmailId VARCHAR(30) UNIQUE,
+    City VARCHAR(20)
+);
+
+
+
+select * from customer;
+
+
+ALTER TABLE customer
+ADD COLUMN Pincode VARCHAR(10);                              -- Add pin code column in data 
+
+select * from customer;
+
+
+ALTER TABLE customer                                            -- change a mob_no datatype in int to bigint
+MODIFY COLUMN Mob_no BIGINT;
+
+
+select * from customer;
+
+
+ALTER TABLE customer                                                            -- change EmailId to Email
+CHANGE COLUMN EmailId Email VARCHAR(30) NOT NULL;
+
+
+select * from customer;
+
+
+RENAME TABLE customer TO cust;                                                 -- customer table name to cust
+
+
+select * from cust;
+
+
+ALTER TABLE cust
+DROP COLUMN Pincode;                                                           -- delete pin code column in table 
+
+
+select * from cust;
+
+
+INSERT INTO cust (Cust_name, Mob_no, Email, City)
+VALUES ('Ritesh', 9876543210, 'ritesh@gmail.com', 'Pune');                      -- insert data in table
+
+
+select * from cust;
+
+
+INSERT INTO cust (Cust_name, Mob_no, Email, City)
+VALUES
+('hitesh', 9476543211, 'hitesh@gmail.com', 'Pune'),                             -- diffent way to insert values
+('mitesh', 9476543212, 'mitesh@gmail.com', 'Hune'),
+('gitesh', 9416543210, 'gitesh@gmail.com', 'Sune');
+
+
+commit;                                                                        -- Permanently save changes to the database
+
